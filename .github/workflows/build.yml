@@ -5,7 +5,7 @@ env:
 jobs:
   # Remove the following section.
   - name: Generate
-    run: npm run generate
+    run: npm run build
     # - name: Zip artifact for upload
     #  run: cd dist && zip ../dist.zip . -r
 
