@@ -1,6 +1,13 @@
+# Add this description above jobs:
 env:
   NEXT_PUBLIC_BASE_URL: ${{secrets.NEXT_PUBLIC_BASE_URL}}
 
 jobs:
-  - run: npm run build
+  # Remove the following section.
+  - name: Generate
+    run: npm run generate
+  - name: Zip artifact for upload
+    run: cd dist && zip ../dist.zip . -r
+
+# Replace dist with out in the following.
 path: dist
