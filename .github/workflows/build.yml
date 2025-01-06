@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Generate
-        run: npm run generate
+        run: npm run build
       # Uncomment the following if needed
       # - name: Zip artifact for upload
       #   run: cd dist && zip ../dist.zip . -r
