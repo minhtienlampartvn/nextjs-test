@@ -3,16 +3,11 @@ env:
   NEXT_PUBLIC_BASE_URL: ${{secrets.NEXT_PUBLIC_BASE_URL}}
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Generate
-        run: npm run build
-      # Uncomment the following if needed
-      # - name: Zip artifact for upload
-      #   run: cd dist && zip ../dist.zip . -r
-      - name: Upload artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: build-output
-          path: out # Replace 'dist' with 'out'
+  # Remove the following section.
+  - name: Generate
+    run: npm run build
+  - name: Zip artifact for upload
+    run: cd dist && zip ../dist.zip . -r
+
+# Replace dist with out in the following.
+path: dist
